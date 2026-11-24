@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Diario - Colegio Montano</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        montanoBlue: '#1269A8',
+                        montanoYellow: '#F7D615',
+                        montanoGreen: '#54887D',
+                        montanoLightBlue: '#88B5C7',
+                        montanoOlive: '#A6B046',
+                        montanoBg: '#F2F5E9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F2F5E9;
+        }
+    </style>
+</head>
+<body class="bg-[#F2F5E9] min-h-screen flex flex-col text-slate-800">
+
+    <!-- Header Institucional con Botón de Pantalla Completa -->
+    <header class="bg-montanoBlue text-white shadow-md py-4 px-6 flex flex-wrap justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyEop0yf6lZ7Jk9MILZxF1rBj4Oqs5esyhIQ&s" onerror="this.src='https://placehold.co/48x48/ffffff/1269A8?text=CM'" alt="Logo Colegio Montano" class="h-12 w-12 rounded-full object-cover bg-white p-1 shadow">
+            <div>
+                <h1 class="text-xl font-bold">Colegio Montano - Pizarra Digital Interactiva</h1>
+                <p class="text-xs text-montanoLightBlue">Formando líderes con propósito y valores | Duración: 50 minutos</p>
+            </div>
+        </div>
+        <div class="mt-2 sm:mt-0 flex items-center space-x-3">
+            <button onclick="toggleFullscreen()" class="bg-montanoYellow text-slate-900 font-semibold px-4 py-2 rounded-lg shadow hover:bg-yellow-400 transition flex items-center space-x-2 text-sm cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+                <span>Pantalla Completa</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Barra de Metadatos del Plan -->
+    <section class="bg-white border-b border-slate-200 px-6 py-3 shadow-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 text-xs sm:text-sm">
+            <div><span class="font-semibold text-montanoBlue">Curso:</span> Ciencias Sociales</div>
+            <div class="col-span-2"><span class="font-semibold text-montanoBlue">Tema:</span> Pueblos Mesoamericanos</div>
+            <div><span class="font-semibold text-montanoBlue">Grado:</span> 4to Primaria</div>
+            <div><span class="font-semibold text-montanoBlue">Unidad:</span> Unidad 1</div>
+            <div><span class="font-semibold text-montanoBlue">Plan N°:</span> 5</div>
+            <div><span class="font-semibold text-montanoBlue">Fecha:</span> Enero 2027</div>
+            <div><span class="font-semibold text-montanoBlue">Docente:</span> Andrea Aguilar</div>
+        </div>
+    </section>
+
+    <!-- Componente Principal / Pestañas de Navegación -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 flex flex-col">
+        
+        <!-- Tarjeta de Resumen Curricular, Hábito Montano y Recursos -->
+        <div class="bg-white rounded-xl shadow-md p-5 mb-6 border-l-8 border-montanoGreen">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <h2 class="text-sm font-bold text-montanoGreen uppercase tracking-wide mb-1">Competencia y Logro (CNB Guatemala)</h2>
+                    <p class="text-xs sm:text-sm text-slate-700"><strong>Competencia:</strong> Relaciona la ubicación geográfica, la organización social y los aportes culturales de las civilizaciones antiguas de Mesoamérica con el presente.<br><strong>Logro Observable:</strong> Identifica las principales civilizaciones mesoamericanas (Olmeca, Maya, Azteca/Mexica, Zapoteca) y valora su legado científico y cultural.</p>
+                </div>
+                <div>
+                    <h2 class="text-sm font-bold text-montanoOlive uppercase tracking-wide mb-1">Modelo Formativo & Hábito Montano</h2>
+                    <p class="text-xs sm:text-sm text-slate-700"><strong>Hábitos:</strong> <span class="text-montanoBlue font-semibold">"Comenzar con un fin en mente"</span> y <span class="text-montanoBlue font-semibold">"Sinergizar"</span>.<br><strong>Competencias clave:</strong> Pensamiento crítico, creatividad, ubicación espacial, trabajo en equipo y valoración del patrimonio cultural.</p>
+                </div>
+                <div>
+                    <h2 class="text-sm font-bold text-montanoBlue uppercase tracking-wide mb-1">Evaluación y Recursos (50 min)</h2>
+                    <p class="text-xs sm:text-sm text-slate-700"><strong>Momentos:</strong> Inicial (mapa mental/exploración del maíz), Formativa (ficha comparativa y línea de tiempo/mapa) y Sumativa (lista de cotejo).<br><strong>Recursos:</strong> Mapa de Mesoamérica, cuaderno, tarjetas de civilizaciones, marcadores, crayones y pizarra digital.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones de Navegación de la Secuencia Didáctica (Distribución exacta: 5 + 15 + 20 + 10 = 50 min) -->
+        <div class="flex flex-wrap gap-2 mb-6 justify-center">
+            <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn px-5 py-3 rounded-xl font-bold text-sm shadow transition bg-montanoBlue text-white flex items-center space-x-2 cursor-pointer">
+                <span>I) Introducción (5 min)</span>
+            </button>
+            <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn px-5 py-3 rounded-xl font-bold text-sm shadow transition bg-white text-slate-700 hover:bg-slate-100 flex items-center space-x-2 cursor-pointer">
+                <span>II) Trabajo Individual (15 min)</span>
+            </button>
+            <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn px-5 py-3 rounded-xl font-bold text-sm shadow transition bg-white text-slate-700 hover:bg-slate-100 flex items-center space-x-2 cursor-pointer">
+                <span>III) Trabajo Cooperativo (20 min)</span>
+            </button>
+            <button onclick="switchTab('tab4')" id="btn-tab4" class="tab-btn px-5 py-3 rounded-xl font-bold text-sm shadow transition bg-white text-slate-700 hover:bg-slate-100 flex items-center space-x-2 cursor-pointer">
+                <span>IV) Plenaria y Cierre (10 min)</span>
+            </button>
+        </div>
+
+        <!-- CONTENIDOS DE LAS PESTAÑAS -->
+
+        <!-- PESTAÑA 1 -->
+        <div id="tab1" class="tab-content bg-white rounded-2xl shadow-lg p-6 border border-slate-100 flex flex-col space-y-4">
+            <div class="flex items-center space-x-3 border-b pb-3">
+                <div class="bg-montanoBlue text-white p-3 rounded-xl text-xl font-bold">I</div>
+                <div>
+                    <h3 class="text-lg font-bold text-montanoBlue">Introducción Motivante (5 minutos)</h3>
+                    <p class="text-sm text-slate-500">Activación de conocimientos previos: "El secreto del maíz y las grandes ciudades"</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-montanoGreen mb-2">Dinámica Rápida: "Adivina el Legado"</h4>
+                    <p class="text-sm text-slate-700 mb-3">La docente Andrea Aguilar menciona 3 pistas: <em>"Inventaron el número cero, construyeron pirámides escalonadas y cultivaron el maíz y el cacao"</em>:</p>
+                    <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                        <li>Los estudiantes identifican de qué región antigua estamos hablando: <strong>Mesoamérica</strong>.</li>
+                        <li>Ubicamos rápidamente en el mapa qué países actuales formaban Mesoamérica (México, Guatemala, Belice, El Salvador, Honduras, Nicaragua y Costa Rica).</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-montanoBlue mb-2">Preguntas exploratorias (Evaluación Diagnóstica)</h4>
+                        <p class="text-sm text-slate-700 mb-2">1. ¿Qué sitios arqueológicos o ciudades antiguas de Guatemala conoces (como Tikal, Kaminaljuyú o Iximché)?</p>
+                        <p class="text-sm text-slate-700 mb-2">2. ¿Qué alimentos que comemos hoy en día heredamos de los pueblos mesoamericanos?</p>
+                    </div>
+                    <div class="mt-4 p-3 bg-montanoLightBlue/20 rounded-lg text-xs text-slate-700">
+                        <strong>Conexión Hábito Montano:</strong> Practicar <span class="font-semibold text-montanoBlue">"Comenzar con un fin en mente"</span>: comprender nuestras raíces históricas para valorar nuestra identidad hoy.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 2 -->
+        <div id="tab2" class="tab-content hidden bg-white rounded-2xl shadow-lg p-6 border border-slate-100 flex flex-col space-y-4">
+            <div class="flex items-center space-x-3 border-b pb-3">
+                <div class="bg-montanoBlue text-white p-3 rounded-xl text-xl font-bold">II</div>
+                <div>
+                    <h3 class="text-lg font-bold text-montanoBlue">Trabajo Individual (15 minutos)</h3>
+                    <p class="text-sm text-slate-500">Explorando las grandes civilizaciones de Mesoamérica</p>
+                </div>
+            </div>
+            <div class="space-y-4 mt-2">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-montanoGreen mb-2">Actividad: "Ficha de los Pueblos Mesoamericanos"</h4>
+                    <p class="text-sm text-slate-700 mb-3">En su cuaderno de Ciencias Sociales, cada estudiante completa las siguientes actividades:</p>
+                    <ol class="list-decimal list-inside text-sm text-slate-700 space-y-2 mb-4">
+                        <li>Escribe el nombre de <strong>4 pueblos mesoamericanos</strong> importantes (Olmecas, Mayas, Zapotecas, Mexicas/Aztecas).</li>
+                        <li>Anota <strong>1 característica o invento principal</strong> de los Olmecas ("cultura madre") y <strong>2 aportes</strong> de los Mayas (matemática, astronomía, escritura jeroglífica o calendario).</li>
+                        <li>Dibuja <strong>3 productos agrícolas</strong> fundamentales de Mesoamérica (maíz, frijol, calabaza/ayote o cacao).</li>
+                    </ol>
+
+                    <!-- Acordeón desplegable con orientación oculta -->
+                    <div class="border border-slate-300 rounded-lg overflow-hidden mt-4">
+                        <button onclick="toggleAccordion('solution-guide')" class="w-full bg-slate-200 px-4 py-2 text-left font-semibold text-slate-700 flex justify-between items-center text-sm cursor-pointer hover:bg-slate-300 transition">
+                            <span>💡 Ver Guía de Apoyo: Características de Mesoamérica (Autoevaluación)</span>
+                            <span id="icon-solution-guide">▼</span>
+                        </button>
+                        <div id="solution-guide" class="hidden p-4 bg-white text-sm text-slate-700 space-y-2 border-t border-slate-300">
+                            <p><strong>Datos clave para verificar tu ficha individual:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 text-xs sm:text-sm">
+                                <li><strong>Olmecas:</strong> Considerados la "cultura madre" de Mesoamérica; famosos por sus enormes cabezas colosales talladas en piedra.</li>
+                                <li><strong>Mayas:</strong> Se desarrollaron en Guatemala, sur de México, Belice y Honduras. Crearon el concepto del cero, calendarios exactos, escritura jeroglífica y grandes ciudades como Tikal y Quiriguá.</li>
+                                <li><strong>Mexicas (Aztecas):</strong> Fundaron Tenochtitlán en el valle de México y desarrollaron cultivos flotantes llamados <em>chinampas</em>.</li>
+                                <li><strong>Rasgos en común:</strong> Agricultura basada en la milpa (maíz, frijol y ayote), juego de pelota, pirámides escalonadas y comercio mediante el trueque.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 3 -->
+        <div id="tab3" class="tab-content hidden bg-white rounded-2xl shadow-lg p-6 border border-slate-100 flex flex-col space-y-4">
+            <div class="flex items-center space-x-3 border-b pb-3">
+                <div class="bg-montanoBlue text-white p-3 rounded-xl text-xl font-bold">III</div>
+                <div>
+                    <h3 class="text-lg font-bold text-montanoBlue">Trabajo Cooperativo / en Equipo (20 minutos)</h3>
+                    <p class="text-sm text-slate-500">Creando la Cápsula Cultural de Mesoamérica</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-montanoGreen mb-2">Organización de Equipos (4 integrantes)</h4>
+                    <p class="text-sm text-slate-700 mb-3">Asignación de roles para aprovechar los 20 minutos:</p>
+                    <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                        <li><strong>Historiador Líder:</strong> Organiza la información de la civilización asignada.</li>
+                        <li><strong>Cartógrafo / Ilustrador:</strong> Dibuja el símbolo, pirámide o mapa de ubicación.</li>
+                        <li><strong>Redactor Cultural:</strong> Escribe los 3 aportes principales que siguen vivos hoy.</li>
+                        <li><strong>Vocero:</strong> Expone la tarjeta cultural ante el salón en la plenaria.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-montanoOlive mb-2">Producto Concreto: "Tarjeta de Civilización Mesoamericana"</h4>
+                    <p class="text-sm text-slate-700 mb-2">A cada equipo se le asigna un pueblo (<em>Olmecas, Mayas, Zapotecas, Teotihuacanos o Mexicas</em>) y elaboran una ficha ilustrada que incluya:</p>
+                    <ol class="list-decimal list-inside text-sm text-slate-700 space-y-1 mb-3">
+                        <li><strong>Ubicación geográfica:</strong> En qué región o países actuales habitaron.</li>
+                        <li><strong>2 grandes logros:</strong> En arquitectura, ciencia, arte o agricultura.</li>
+                        <li><strong>Herencia viva:</strong> Un ejemplo de su cultura presente hoy en Guatemala o Mesoamérica.</li>
+                    </ol>
+                    <div class="p-3 bg-montanoYellow/20 rounded-lg text-xs text-slate-800">
+                        <strong>Hábito Sinergizar:</strong> Combinar las habilidades de investigación y dibujo de todos para lograr un gran resultado.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 4 -->
+        <div id="tab4" class="tab-content hidden bg-white rounded-2xl shadow-lg p-6 border border-slate-100 flex flex-col space-y-4">
+            <div class="flex items-center space-x-3 border-b pb-3">
+                <div class="bg-montanoBlue text-white p-3 rounded-xl text-xl font-bold">IV</div>
+                <div>
+                    <h3 class="text-lg font-bold text-montanoBlue">Plenaria, Juego Interactivo y Cierre (10 minutos)</h3>
+                    <p class="text-sm text-slate-500">Socialización rápida, Trivia Montano y Lista de Cotejo</p>
+                </div>
+            </div>
+            
+            <!-- Plenaria y Trivia Interactiva -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-2">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-montanoBlue mb-2">Plenaria Express (5 minutos)</h4>
+                    <p class="text-sm text-slate-700 mb-3">Los voceros presentan en 45 segundos la tarjeta de su civilización. Preguntas de cierre por la docente Andrea Aguilar:</p>
+                    <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                        <li>¿Qué tenían en común todos los pueblos de Mesoamérica?</li>
+                        <li>¿Por qué debemos cuidar y sentir orgullo de nuestros sitios arqueológicos y tradiciones?</li>
+                    </ul>
+                </div>
+
+                <!-- Trivia Interactiva Multi-pregunta -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-bold text-montanoGreen">Trivia Interactiva Montano (5 min)</h4>
+                            <span id="trivia-counter" class="text-xs font-bold bg-montanoBlue text-white px-2 py-1 rounded">Pregunta 1 de 3</span>
+                        </div>
+                        <p id="trivia-question" class="text-sm text-slate-700 font-semibold mb-3">1. ¿Cuál fue el alimento sagrado y base de la agricultura mesoamericana?</p>
+                        <div id="trivia-options" class="space-y-2">
+                            <button onclick="checkAnswer(0)" class="w-full text-left bg-white p-2 rounded border border-slate-300 hover:bg-slate-100 text-xs sm:text-sm cursor-pointer">A) El trigo y la cebada</button>
+                            <button onclick="checkAnswer(1)" class="w-full text-left bg-white p-2 rounded border border-slate-300 hover:bg-slate-100 text-xs sm:text-sm cursor-pointer">B) El maíz (junto con el frijol y el ayote en la milpa)</button>
+                            <button onclick="checkAnswer(2)" class="w-full text-left bg-white p-2 rounded border border-slate-300 hover:bg-slate-100 text-xs sm:text-sm cursor-pointer">C) El arroz y la manzana</button>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div id="trivia-feedback" class="text-xs sm:text-sm font-semibold hidden"></div>
+                        <button id="next-trivia-btn" onclick="nextQuestion()" class="hidden bg-montanoOlive text-white px-3 py-1 rounded text-xs font-bold hover:opacity-90 cursor-pointer">Siguiente →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instrumento de Evaluación: Lista de Cotejo Interactiva -->
+            <div class="mt-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div class="flex flex-wrap justify-between items-center mb-3">
+                    <h4 class="font-bold text-montanoOlive">Instrumento de Evaluación Sumativa: Lista de Cotejo para Plenaria</h4>
+                    <span id="score-display" class="text-xs font-bold bg-montanoBlue text-white px-3 py-1 rounded-full">Puntaje Total: 12 / 12 pts</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                        <thead>
+                            <tr class="bg-slate-200 text-slate-700">
+                                <th class="p-2 border border-slate-300">Criterio a Evaluar</th>
+                                <th class="p-2 border border-slate-300 text-center">Logrado (3 pts)</th>
+                                <th class="p-2 border border-slate-300 text-center">En Proceso (2 pts)</th>
+                                <th class="p-2 border border-slate-300 text-center">Inicio (1 pt)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-2 border border-slate-300 font-medium">1. Dominio del tema y ubicación correcta del pueblo mesoamericano</td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit1" value="3" onchange="updateScore()" checked></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit1" value="2" onchange="updateScore()"></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit1" value="1" onchange="updateScore()"></td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="p-2 border border-slate-300 font-medium">2. Identificación clara de los logros y aportes culturales al presente</td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit2" value="3" onchange="updateScore()" checked></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit2" value="2" onchange="updateScore()"></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit2" value="1" onchange="updateScore()"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border border-slate-300 font-medium">3. Trabajo colaborativo, creatividad y equidad en la participación</td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit3" value="3" onchange="updateScore()" checked></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit3" value="2" onchange="updateScore()"></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit3" value="1" onchange="updateScore()"></td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="p-2 border border-slate-300 font-medium">4. Capacidad de respuesta asertiva a las preguntas de la plenaria</td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit4" value="3" onchange="updateScore()" checked></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit4" value="2" onchange="updateScore()"></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit4" value="1" onchange="updateScore()"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer Institucional -->
+    <footer class="bg-white border-t border-slate-200 py-3 text-center text-xs text-slate-500 mt-6">
+        Colegio Montano © 2027 | Asistente Pedagógico e Interactivo | Currículo Nacional Base (CNB) Guatemala
+    </footer>
+
+    <!-- Scripts de Interactividad -->
+    <script>
+        function switchTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.add('hidden'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-montanoBlue', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-100');
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-100');
+            activeBtn.classList.add('bg-montanoBlue', 'text-white');
+        }
+
+        function toggleAccordion(id) {
+            const element = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+                icon.textContent = '▲';
+            } else {
+                element.classList.add('hidden');
+                icon.textContent = '▼';
+            }
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error("Error al intentar activar pantalla completa: ", err);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Banco de preguntas para la Trivia de Cierre
+        const triviaData = [
+            {
+                q: "1. ¿Cuál fue el alimento sagrado y base de la agricultura mesoamericana?",
+                options: [
+                    "A) El trigo y la cebada",
+                    "B) El maíz (junto con el frijol y el ayote en la milpa)",
+                    "C) El arroz y la manzana"
+                ],
+                correct: 1,
+                feedback: "¡Excelente! La milpa (maíz, frijol y ayote) fue la base alimentaria de Mesoamérica."
+            },
+            {
+                q: "2. ¿Qué civilización mesoamericana inventó el número cero y construyó ciudades como Tikal?",
+                options: [
+                    "A) Los Mayas",
+                    "B) Los Romanos",
+                    "C) Los Egipcios"
+                ],
+                correct: 0,
+                feedback: "¡Correcto! Los Mayas destacaron en matemáticas, astronomía y arquitectura en Guatemala y la región."
+            },
+            {
+                q: "3. ¿Qué civilización es conocida como la 'cultura madre' de Mesoamérica?",
+                options: [
+                    "A) Los Incas",
+                    "B) Los Olmecas",
+                    "C) Los Vikingos"
+                ],
+                correct: 1,
+                feedback: "¡Muy bien! Los Olmecas sentaron muchas bases culturales y esculpieron las famosas cabezas colosales."
+            }
+        ];
+
+        let currentQuestion = 0;
+// ... existing code ... -->
